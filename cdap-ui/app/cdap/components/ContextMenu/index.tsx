@@ -84,7 +84,7 @@ export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenu
     () => {
       if (children) {
         children.forEach((child) => {
-          child.removeEventListener('contextmenu', defaultEventHandler)
+          child.removeEventListener('contextmenu', defaultEventHandler);
           child.addEventListener('contextmenu', defaultEventHandler);
         });
       }

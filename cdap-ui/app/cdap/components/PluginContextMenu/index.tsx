@@ -39,8 +39,14 @@ export default function PluginContextMenu({
           connections,
         });
         copyToClipBoard(text).then(
-          () => console.log('Success now show a tooltip or something to the user'),
-          () => console.error('Fail!. Show to the user copy failed')
+          () => {
+            /* tslint:disable:no-console */
+            console.log('Success now show a tooltip or something to the user');
+          },
+          () => {
+            /* tslint:disable:no-console */
+            console.error('Fail!. Show to the user copy failed');
+          }
         );
       },
     },
