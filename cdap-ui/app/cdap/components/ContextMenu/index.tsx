@@ -83,7 +83,10 @@ export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenu
   React.useEffect(
     () => {
       if (children) {
-        children.forEach((child) => child.addEventListener('contextmenu', defaultEventHandler));
+        children.forEach((child) => {
+          child.removeEventListener('contextmenu', defaultEventHandler)
+          child.addEventListener('contextmenu', defaultEventHandler);
+        });
       }
       return () => {
         if (children) {

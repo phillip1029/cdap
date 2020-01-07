@@ -17,7 +17,7 @@
 import React from 'react';
 import { ContextMenu, IContextMenuOption } from 'components/ContextMenu';
 import PropTypes from 'prop-types';
-import { CopyToClipBoard } from 'services/Clipboard';
+import { copyToClipBoard } from 'services/Clipboard';
 
 export default function PluginContextMenu({
   nodeId,
@@ -38,7 +38,7 @@ export default function PluginContextMenu({
           stages,
           connections,
         });
-        CopyToClipBoard(text).then(
+        copyToClipBoard(text).then(
           () => console.log('Success now show a tooltip or something to the user'),
           () => console.error('Fail!. Show to the user copy failed')
         );

@@ -19,7 +19,7 @@ import { ContextMenu, IContextMenuOption } from 'components/ContextMenu';
 import WranglerConnection from 'components/PipelineContextMenu/WranglerConnection';
 import If from 'components/If';
 import PropTypes from 'prop-types';
-import { CopyFromClipBoard } from 'services/Clipboard';
+import { getValueFromClipboard } from 'services/Clipboard';
 import { objectQuery } from 'services/helpers';
 import { INode, IConnection } from 'components/PipelineContextMenu/PipelineTypes';
 import { INewWranglerConnection } from 'components/PipelineContextMenu/WranglerConnection';
@@ -42,7 +42,7 @@ interface IPipelineContextMenuProps {
 async function getNodesFromClipBoard(): Promise<IStage | undefined> {
   let clipText;
   try {
-    clipText = await CopyFromClipBoard();
+    clipText = await getValueFromClipboard();
   } catch (e) {
     return Promise.reject();
   }
@@ -66,7 +66,7 @@ function getClipboardData(text): IStage | undefined {
 async function isPasteOptionDisabled(): Promise<boolean> {
   let clipText;
   try {
-    clipText = await CopyFromClipBoard();
+    clipText = await getValueFromClipboard();
   } catch (e) {
     return Promise.reject(true);
   }
