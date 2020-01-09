@@ -44,10 +44,10 @@ const StyledMenuItem = withStyles(() => ({
   },
 }))(MenuItem);
 
-const StyledDisabledMenuItem = withStyles(() => ({
+const StyledDisabledMenuItem = withStyles((theme) => ({
   root: {
     minHeight: 'auto',
-    color: 'lightgrey',
+    color: theme.palette.grey[500],
     cursor: 'not-allowed',
   },
 }))(MenuItem);

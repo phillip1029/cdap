@@ -42,7 +42,7 @@ const styles = (theme) => ({
     fontSize: '1.5rem',
     '&:hover': {
       background: theme.palette.blue['40'],
-      color: 'white',
+      color: theme.palette.white['50'],
     },
   },
 });

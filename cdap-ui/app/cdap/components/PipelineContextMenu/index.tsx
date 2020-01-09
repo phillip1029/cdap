@@ -46,10 +46,10 @@ async function getNodesFromClipBoard(): Promise<IStage | undefined> {
   } catch (e) {
     return Promise.reject();
   }
-  return Promise.resolve(parseClipboardDaat(clipText));
+  return Promise.resolve(parseClipboardData(clipText));
 }
 
-function parseClipboardDaat(text): IStage | undefined {
+function parseClipboardData(text): IStage | undefined {
   let config;
   if (typeof text !== 'object') {
     try {
