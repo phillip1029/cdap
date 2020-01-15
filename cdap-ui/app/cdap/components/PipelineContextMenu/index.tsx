@@ -70,7 +70,7 @@ async function isPasteOptionDisabled(): Promise<boolean> {
   } catch (e) {
     return Promise.reject(true);
   }
-  return Promise.resolve(isClipboardPastable(clipText));
+  return Promise.resolve(!isClipboardPastable(clipText));
 }
 
 function isClipboardPastable(text) {
@@ -79,10 +79,10 @@ function isClipboardPastable(text) {
     try {
       jsonNodes = JSON.parse(text);
     } catch (e) {
-      return true;
+      return false;
     }
   }
-  return objectQuery(jsonNodes, 'stages', 'length') > 0 ? false : true;
+  return objectQuery(jsonNodes, 'stages', 'length') > 0 ? true : false;
 }
 
 export default function PipelineContextMenu({

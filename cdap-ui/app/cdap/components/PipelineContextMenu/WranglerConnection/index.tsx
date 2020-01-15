@@ -15,8 +15,8 @@
 */
 
 import React from 'react';
-import { Modal, ModalBody } from 'reactstrap';
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+import { Modal } from 'reactstrap';
+import withStyles, { WithStyles, StyleRules } from '@material-ui/core/styles/withStyles';
 import ThemeWrapper from 'components/ThemeWrapper';
 import IconSVG from 'components/IconSVG';
 import PropTypes from 'prop-types';
@@ -30,7 +30,7 @@ import {
 } from 'components/PipelineContextMenu/PipelineTypes';
 import { GLOBALS } from 'services/global-constants';
 
-const styles = (theme) => ({
+const styles = (theme): StyleRules => ({
   modalBtnClose: {
     height: '50px',
     width: '50px',
@@ -38,7 +38,7 @@ const styles = (theme) => ({
     border: 0,
     background: 'transparent',
     borderLeft: `1px solid ${theme.palette.grey['300']}`,
-    fontWeight: 'bold' as 'bold',
+    fontWeight: 'bold',
     fontSize: '1.5rem',
     '&:hover': {
       background: theme.palette.blue['40'],

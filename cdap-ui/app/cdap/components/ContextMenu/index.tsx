@@ -52,6 +52,8 @@ const StyledDisabledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
+const defaultEventHandler = (e) => e.preventDefault();
+
 export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenuProps) => {
   const [mousePosition, setMousePosition] = React.useState(initialMousePosition);
 
@@ -67,7 +69,6 @@ export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenu
       onOpen();
     }
   };
-  const defaultEventHandler = (e) => e.preventDefault();
 
   // state to capture children of context menu to disable right click on them.
   const [children, setChildren] = React.useState(null);
@@ -84,17 +85,9 @@ export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenu
     () => {
       if (children) {
         children.forEach((child) => {
-          child.removeEventListener('contextmenu', defaultEventHandler);
           child.addEventListener('contextmenu', defaultEventHandler);
         });
       }
-      return () => {
-        if (children) {
-          children.forEach((child) =>
-            child.removeEventListener('contextmenu', defaultEventHandler)
-          );
-        }
-      };
     },
     [children]
   );
@@ -153,7 +146,7 @@ export const ContextMenu = ({ selector, element, options, onOpen }: IContextMenu
 (ContextMenu as any).propTypes = {
   selector: PropTypes.string,
   element: PropTypes.node,
-  options: PropTypes.object,
+  options: PropTypes.arrayOf(PropTypes.object),
   onOpen: PropTypes.func,
 };
 
