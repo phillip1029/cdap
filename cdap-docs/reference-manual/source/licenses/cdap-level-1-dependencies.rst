@@ -4,10 +4,10 @@
     :version: 6.1.1
 
 =================================================
-CDAP |version|
+Cask Data Application Platform |version|
 =================================================
 
-CDAP Level 1 Dependencies
+Cask Data Application Level 1 Dependencies
 --------------------------------------------------------------------------------
 
 .. rst2pdf: PageBreak
@@ -17,7 +17,7 @@ CDAP Level 1 Dependencies
 .. rst2pdf: config ../../../_common/_templates/pdf-config
 .. rst2pdf: stylesheets ../../../_common/_templates/pdf-stylesheet
 
-.. csv-table:: **CDAP Level 1 Dependencies**
+.. csv-table:: **Cask Data Application Platform Level 1 Dependencies**
    :header: "Package","Artifact","License","License URL"
    :widths: 20, 20, 20, 40
 

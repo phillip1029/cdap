@@ -4,10 +4,10 @@
     :version: 6.1.1
 
 =================================================
-CDAP |version|
+Cask Data Application Platform |version|
 =================================================
 
-CDAP Distributed Dependencies
+Cask Data Application Platform Distributed Dependencies
 --------------------------------------------------------------------------------
 
 .. rst2pdf: PageBreak

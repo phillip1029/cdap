@@ -4,10 +4,10 @@
     :version: 6.1.1
 
 =================================================
-CDAP |version|
+Cask Data Application |version|
 =================================================
 
-CDAP UI Dependencies
+Cask Data Application UI Dependencies
 --------------------------------------------------------------------------------
 
 .. rst2pdf: PageBreak
